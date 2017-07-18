@@ -14,3 +14,4 @@ sudo service apache2 restart
 echo "Type the project name: followed by [ENTER]"
 read ProjectName
 sudo ./.composer/vendor/bin/laravel new $ProjectName
+sudo mv $ProjectName .composer/vendor
