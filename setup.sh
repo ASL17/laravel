@@ -8,7 +8,6 @@ sudo apt-get install php7.0 libapache2-mod-php7.0 php7.0-mcrypt
 #/LAMP
 sudo apt-get upgrade
 sudo apt-get install php7.0-zip php7.0-xml php7.0-mbstring
-configurazione php.ini
 sudo apt-get install composer
 sudo composer global require "laravel/installer" 
 sudo service apache2 restart
