@@ -1,16 +1,23 @@
 # laravel and LAMP automatic setup
 #!/bin/bash 
 sudo apt-get update
+
 #LAMP
+sudo apt-get install php7.0 -y
+
 sudo apt-get install apache2 -y
+sudo apt-get install libapache2-mod-php7.0 -y
+
 sudo apt-get install mysql-server -y
 sudo apt-get install libapache2-mod-auth-mysql -y
 sudo apt-get install php7.0-mysql -y
-sudo apt-get install php7.0 -y
-sudo apt-get install libapache2-mod-php7.0 -y
-sudo apt-get install php7.0-mcrypt -y
+
+
 #/LAMP
+
 sudo apt-get upgrade
+
+sudo apt-get install php7.0-mcrypt -y
 sudo apt-get install php7.0-zip -y
 sudo apt-get install php7.0-xml -y
 sudo apt-get install php7.0-mbstring -y
@@ -23,18 +30,18 @@ sudo service apache2 restart
 sudo wget https://raw.githubusercontent.com/bello12/laravel/master/ProjectCreator.sh
 sudo chmod +x ProjectCreator.sh
 
-echo 'Do you want to proceed to the first Laravel Project setup? (y/n)'
+echo 'Do you want to proceed to the first Laravel Project setup? [Y/n]'
 read WantsProjectSetup
 
-#todo: check of the WantsProjectsetup (insert into a loop until the user inserts
-#      the valid inputs 'y'/'yes' or 'n'/'no'
+#todo: check of the WantsProjectSetup ( 'do { read WantsProjectSetup } until (!isInputValid)' )  
 
-if [$WantsProjectSetup == 'y'] || [$WantsProjectSetup == 'yes']
+WantsProjectSetup = ${WantsProjectSetup,,}
+
+if [ $WantsProjectSetup = 'y' ] || [ $WantsProjectSetup = 'yes' ]
 then
         echo 'Executing script ProjectCreator.sh'
         ./ProjectCreator.sh
-elif [$WantsProjectSetup == 'n'] || [$WantsProjectSetup == 'no']
+elif [ $WantsProjectSetup = 'n' ] || [ $WantsProjectSetup = 'no' ]
 then
         echo 'Ok. You can create anytime you want a Laravel project with the script ProjectCreator.sh inside this directory'
 fi
-
