@@ -35,7 +35,7 @@ read WantsProjectSetup
 
 #todo: check of the WantsProjectSetup ( 'do { read WantsProjectSetup } until (!isInputValid)' )  
 
-WantsProjectSetup = ${WantsProjectSetup,,}
+WantsProjectSetup=${WantsProjectSetup,,}
 
 if [ $WantsProjectSetup = 'y' ] || [ $WantsProjectSetup = 'yes' ]
 then
