@@ -2,35 +2,39 @@
 #!/bin/bash 
 sudo apt-get update
 #LAMP
-sudo apt-get install apache2
-sudo apt-get install mysql-server
-sudo apt-get install libapache2-mod-auth-mysql 
-sudo apt-get install php7.0-mysql
-sudo apt-get install php7.0 
-sudo apt-get install libapache2-mod-php7.0 
-sudo apt-get install php7.0-mcrypt
+sudo apt-get install apache2 -y
+sudo apt-get install mysql-server -y
+sudo apt-get install libapache2-mod-auth-mysql -y
+sudo apt-get install php7.0-mysql -y
+sudo apt-get install php7.0 -y
+sudo apt-get install libapache2-mod-php7.0 -y
+sudo apt-get install php7.0-mcrypt -y
 #/LAMP
 sudo apt-get upgrade
-sudo apt-get install php7.0-zip 
-sudo apt-get install php7.0-xml
-sudo apt-get install php7.0-mbstring
-sudo apt-get install composer
+sudo apt-get install php7.0-zip -y
+sudo apt-get install php7.0-xml -y
+sudo apt-get install php7.0-mbstring -y
+sudo apt-get install composer -y
 sudo composer global require "laravel/installer" 
 sudo service apache2 restart
-echo "Type the project name: followed by [ENTER]"
-read ProjectName
-sudo ./.composer/vendor/bin/laravel new $ProjectName
-sudo mv $ProjectName .composer/vendor
-sudo mv .composer/vendor ../../var/www/html
 
-cd ../../etc/apache2/sites-available/
-sudo touch temp.conf
-sudo chmod 777 temp.conf
-sudo chmod 777 000-default.conf
-sudo sed 's%DocumentRoot /var/www/html%DocumentRoot /var/www/html/vendor/'$ProjectName'/public%g'  000-default.conf > temp.conf
+#downloading the other script that permits creation of laravel projects
 
-#rimuovo il file originale, e poi con mv cambio il nome del file
-sudo rm 000-default.conf
-sudo mv temp.conf 000-default.conf
+sudo wget https://raw.githubusercontent.com/bello12/laravel/master/ProjectCreator.sh
+sudo chmod +x ProjectCreator.sh
 
-sudo service apache2 restart
+echo 'Do you want to proceed to the first Laravel Project setup? (y/n)'
+read WantsProjectSetup
+
+#todo: check of the WantsProjectsetup (insert into a loop until the user inserts
+#      the valid inputs 'y'/'yes' or 'n'/'no'
+
+if [$WantsProjectSetup == 'y'] || [$WantsProjectSetup == 'yes']
+then
+        echo 'Executing script ProjectCreator.sh'
+        ./ProjectCreator.sh
+elif [$WantsProjectSetup == 'n'] || [$WantsProjectSetup == 'no']
+then
+        echo 'Ok. You can create anytime you want a Laravel project with the script ProjectCreator.sh inside this directory'
+fi
+
