@@ -7,7 +7,7 @@ read ProjectName
 sudo ./../../var/www/html/vendor/bin/laravel new $ProjectName
 sudo mv $ProjectName ../../var/www/html/vendor
 
-sudo chmod 777 ../../var/www/html/vendor/$ProjectName/storage/views
+sudo chmod 777 ../../var/www/html/vendor/$ProjectName/resources/views
 sudo chmod 777 ../../var/www/html/vendor/$ProjectName/storage/logs
 
 cd ../../etc/apache2/sites-available/
