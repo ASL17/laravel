@@ -15,7 +15,7 @@ sudo apt-get install php7.0-mysql -y
 
 #/LAMP
 
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 sudo apt-get install php7.0-mcrypt -y
 sudo apt-get install php7.0-zip -y
@@ -24,6 +24,12 @@ sudo apt-get install php7.0-mbstring -y
 sudo apt-get install composer -y
 sudo composer global require "laravel/installer" 
 sudo service apache2 restart
+
+#deleting a possible already-downloaded possibly-older-version of ProjectCreator.sh
+if [ -e ProjectCreator.sh ]
+then
+        sudo rm ProjectCreator.sh
+fi
 
 #downloading the other script that permits creation of laravel projects
 sudo wget https://raw.githubusercontent.com/bello12/laravel/master/ProjectCreator.sh
