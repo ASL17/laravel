@@ -4,9 +4,8 @@
 
 echo "Type the project name: followed by [ENTER]"
 read ProjectName
-sudo ./.composer/vendor/bin/laravel new $ProjectName
-sudo mv $ProjectName .composer/vendor
-sudo mv .composer/vendor ../../var/www/html
+sudo ./../../var/www/html/vendor/bin/laravel new $ProjectName
+sudo mv $ProjectName ../../var/www/html/vendor
 
 cd ../../etc/apache2/sites-available/
 sudo touch temp.conf
