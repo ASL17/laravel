@@ -26,7 +26,6 @@ sudo composer global require "laravel/installer"
 sudo service apache2 restart
 
 #downloading the other script that permits creation of laravel projects
-
 sudo wget https://raw.githubusercontent.com/bello12/laravel/master/ProjectCreator.sh
 sudo chmod +x ProjectCreator.sh
 
@@ -35,6 +34,7 @@ read WantsProjectSetup
 
 #todo: check of the WantsProjectSetup ( 'do { read WantsProjectSetup } until (!isInputValid)' )  
 
+#transforming to all lower-case string
 WantsProjectSetup=${WantsProjectSetup,,}
 
 if [ $WantsProjectSetup = 'y' ] || [ $WantsProjectSetup = 'yes' ]
