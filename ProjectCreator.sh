@@ -15,7 +15,7 @@ sudo touch temp.conf
 sudo chmod 777 temp.conf
 sudo chmod 777 000-default.conf
 
-sudo sed 's%^DocumentRoot .*%DocumentRoot /var/www/html/vendor/'$ProjectName'/public%g'  000-default.conf > temp.conf
+sudo sed 's%DocumentRoot /var/www/html%DocumentRoot /var/www/html/vendor/'$ProjectName'/public%g'  000-default.conf > temp.conf
 
 #rimuovo il file originale, e poi con mv cambio il nome del file
 sudo rm 000-default.conf
