@@ -25,7 +25,7 @@ sudo apt-get install composer -y
 sudo composer global require "laravel/installer" 
 sudo service apache2 restart
 
-#deleting a possible already-downloaded possibly-older-version of ProjectCreator.sh
+#deleting a already-downloaded possibly-old-version of ProjectCreator.sh
 if [ -e ProjectCreator.sh ]
 then
         sudo rm ProjectCreator.sh
