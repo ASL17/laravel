@@ -32,7 +32,7 @@ then
 fi
 
 #downloading the other script that permits creation of laravel projects
-sudo wget https://raw.githubusercontent.com/bello12/laravel/master/ProjectCreator.sh
+sudo wget https://raw.githubusercontent.com/ASL17/laravel/master/ProjectCreator.sh
 sudo chmod +x ProjectCreator.sh
 
 echo 'Do you want to proceed to the first Laravel Project setup? [Y/n]'
