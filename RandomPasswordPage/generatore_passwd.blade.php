@@ -7,12 +7,12 @@
                         <p>Generatore di Passoword Casuali</p>
                          <form method="get">
                                 <?php 
-					                              $nchrvalue = 0;
+					$nchrvalue = 0;
                                         if (isset($_GET["nchr"]))
 					                              {
                                                 $nchrvalue = $_GET["nchr"];
                                         }
-                                        echo "<input type=\"text\" name=\"nchr\" value=\"" $nchrvalue."\">";
+                                        echo "<input type=\"text\" name=\"nchr\" value=\"".$nchrvalue."\">";
                                 ?>
                                 <input type="submit" value="Genera">
                          </form>
@@ -22,7 +22,7 @@
 				                        {
                                          $nchr = $_GET["nchr"];
                                          for ($i = 0; $i < $nchr; $i++)
-					                               {
+					 {
                                            $num = rand(32, 127);
 	                                         $let = chr($num);
 	                                         $password .= $let;
