@@ -12,7 +12,7 @@ sudo chmod 777 ../../var/www/html/vendor/$ProjectName/storage/logs
 sudo chmod 777 ../../var/www/html/vendor/$ProjectName/storage/framework/views
 sudo chmod 777 ../../var/www/html/vendor/$ProjectName/storage/framework/sessions
 
-cd ../../etc/apache2/sites-available/
+cd ../../../etc/apache2/sites-available/
 sudo touch temp.conf
 sudo chmod 777 temp.conf
 sudo chmod 777 000-default.conf
